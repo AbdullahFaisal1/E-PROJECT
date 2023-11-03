@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon Icon -->
+	<link rel="icon" href="./toothh.png">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!-------------------------------------- bootstraplink ------------------------------->
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" /> -->
+	<!-------------------------------------- bootstraplink ------------------------------->
+
+	<!----------------------------------------- font awesome ----------------------------------------->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!----------------------------------------- font awesome ----------------------------------------->
+	<!-- sweet alert -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="sweetalert2.all.min.js"></script>
+	<!-- sweet alert -->
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="footer.css">
+	<title>Signup</title>
+	<style>
+		/* Navbar and banner */
+
+
+/* Navbar styles */
+/* Googlefont Poppins CDN Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  min-height: 100vh;
+}
+nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  height: 70px;
+  background: #12cad6;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  z-index: 99;
+}
+nav .navbar{
+  height: 100%;
+  max-width: 1250px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  /* background: red; */
+  padding: 0 50px;
+}
+.navbar .logo a{
+  font-size: 30px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+nav .navbar .nav-links{
+  line-height: 70px;
+  height: 100%;
+}
+nav .navbar .links{
+  display: flex;
+}
+nav .navbar .links li{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0 14px;
+}
+nav .navbar .links li a{
+  height: 100%;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+}
+.links li:hover .htmlcss-arrow,
+.links li:hover .js-arrow{
+  transform: rotate(180deg);
+  }
+
+nav .navbar .links li .arrow{
+  /* background: red; */
+  height: 100%;
+  width: 22px;
+  line-height: 70px;
+  text-align: center;
+  display: inline-block;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+nav .navbar .links li .sub-menu{
+  position: absolute;
+  top: 70px;
+  left: 0;
+  line-height: 40px;
+  background: #12cad6;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 4px 4px;
+  display: none;
+  z-index: 2;
+}
+nav .navbar .links li:hover .htmlCss-sub-menu,
+nav .navbar .links li:hover .js-sub-menu{
+  display: block;
+}
+.navbar .links li .sub-menu li{
+  padding: 0 22px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.navbar .links li .sub-menu a{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+}
+.navbar .links li .sub-menu .more-arrow{
+  line-height: 40px;
+}
+.navbar .links li .htmlCss-more-sub-menu{
+  line-height: 40px;
+}
+.navbar .links li .sub-menu .more-sub-menu{
+  position: absolute;
+  top: 0;
+  left: 100%;
+  border-radius: 0 4px 4px 4px;
+  z-index: 1;
+  display: none;
+}
+.links li .sub-menu .more:hover .more-sub-menu{
+  display: block;
+}
+/* .navbar .search-box{
+  position: relative;
+   height: 40px;
+  width: 40px;
+}
+.navbar .search-box i{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  line-height: 40px;
+  text-align: center;
+  font-size: 22px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.navbar .search-box .input-box{
+  position: absolute;
+  right: calc(100% - 40px);
+  top: 80px;
+  height: 60px;
+  width: 300px;
+  background: #3E8DA8;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+.navbar.showInput .search-box .input-box{
+  top: 65px;
+  opacity: 1;
+  pointer-events: auto;
+  background: #3E8DA8;
+}
+.search-box .input-box::before{
+  content: '';
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background: #3E8DA8;
+  right: 10px;
+  top: -6px;
+  transform: rotate(45deg);
+}
+.search-box .input-box input{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  height: 35px;
+  width: 280px;
+  outline: none;
+  padding: 0 15px;
+  font-size: 16px;
+  border: none;
+} */
+.navbar .nav-links .sidebar-logo{
+  display: none;
+}
+.navbar .bx-menu{
+  display: none;
+}
+@media (max-width:920px) {
+  nav .navbar{
+    max-width: 100%;
+    padding: 0 25px;
+  }
+
+  nav .navbar .logo a{
+    font-size: 27px;
+  }
+  nav .navbar .links li{
+    padding: 0 10px;
+    white-space: nowrap;
+  }
+  nav .navbar .links li a{
+    font-size: 15px;
+  }
+}
+@media (max-width:800px){
+  nav{
+    position: relative;
+  }
+  .navbar .bx-menu{
+    display: block;
+  }
+  nav .navbar .nav-links{
+    position: fixed;
+    top: 0;
+    left: -100%;
+    display: block;
+    max-width: 270px;
+    width: 100%;
+    background:  #12cad6;
+    line-height: 40px;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+    z-index: 1000;
+  }
+  .navbar .nav-links .sidebar-logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .sidebar-logo .logo-name{
+    font-size: 25px;
+    color: #fff;
+  }
+    .sidebar-logo  i,
+    .navbar .bx-menu{
+      font-size: 25px;
+      color: #fff;
+    }
+  nav .navbar .links{
+    display: block;
+    margin-top: 20px;
+  }
+  nav .navbar .links li .arrow{
+    line-height: 40px;
+  }
+nav .navbar .links li{
+    display: block;
+  }
+nav .navbar .links li .sub-menu{
+  position: relative;
+  top: 0;
+  box-shadow: none;
+  display: none;
+}
+nav .navbar .links li .sub-menu li{
+  border-bottom: none;
+
+}
+.navbar .links li .sub-menu .more-sub-menu{
+  display: none;
+  position: relative;
+  left: 0;
+}
+.navbar .links li .sub-menu .more-sub-menu li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.links li:hover .htmlcss-arrow,
+.links li:hover .js-arrow{
+  transform: rotate(0deg);
+  }
+  .navbar .links li .sub-menu .more-sub-menu{
+    display: none;
+  }
+  .navbar .links li .sub-menu .more span{
+    /* background: red; */
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+  }
+
+  .links li .sub-menu .more:hover .more-sub-menu{
+    display: none;
+  }
+  nav .navbar .links li:hover .htmlCss-sub-menu,
+  nav .navbar .links li:hover .js-sub-menu{
+    display: none;
+  }
+.navbar .nav-links.show1 .links .htmlCss-sub-menu,
+  .navbar .nav-links.show3 .links .js-sub-menu,
+  .navbar .nav-links.show2 .links .more .more-sub-menu{
+      display: block;
+    }
+    .navbar .nav-links.show1 .links .htmlcss-arrow,
+    .navbar .nav-links.show3 .links .js-arrow{
+        transform: rotate(180deg);
+}
+    .navbar .nav-links.show2 .links .more-arrow{
+      transform: rotate(90deg);
+    }
+}
+@media (max-width:370px){
+  nav .navbar .nav-links{
+  max-width: 100%;
+} 
+}
+		:root {
+			--primary-color: #12cad6;
+			--secondary-color: #12cad6;
+			--black: #000000;
+			--white: #ffffff;
+			--gray: #efefef;
+			--gray-2: #757575;
+
+			--facebook-color: #4267B2;
+			--google-color: #DB4437;
+			--twitter-color: #1DA1F2;
+			--insta-color: #E1306C;
+		}
+
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+		* {
+			font-family: 'Poppins', sans-serif;
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		html,
+		body {
+			height: 500vh;
+			overflow: hidden;
+		}
+
+		.container {
+			position: relative;
+			min-height: 100vh;
+			overflow: hidden;
+		}
+
+		.row {
+			display: flex;
+			flex-wrap: wrap;
+			height: 100vh;
+		}
+
+		.col {
+			width: 50%;
+		}
+
+		.align-items-center {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+		}
+
+		.form-wrapper {
+			width: 100%;
+			max-width: 28rem;
+		}
+
+		.form {
+			padding: 1rem;
+			background-color: var(--white);
+			border-radius: 1.5rem;
+			width: 100%;
+			box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+			transform: scale(0);
+			transition: .5s ease-in-out;
+			transition-delay: 1s;
+		}
+
+		.input-group {
+			position: relative;
+			width: 100%;
+			margin: 1rem 0;
+		}
+
+		.input-group i {
+			position: absolute;
+			top: 50%;
+			left: 1rem;
+			transform: translateY(-50%);
+			font-size: 1.4rem;
+			color: var(--gray-2);
+		}
+
+		.input-group input {
+			width: 100%;
+			padding: 1rem 3rem;
+			font-size: 1rem;
+			background-color: var(--gray);
+			border-radius: .5rem;
+			border: 0.125rem solid var(--white);
+			outline: none;
+		}
+
+		.input-group input:focus {
+			border: 0.125rem solid var(--primary-color);
+		}
+
+		.form button {
+			cursor: pointer;
+			width: 100%;
+			padding: .6rem 0;
+			border-radius: .5rem;
+			border: none;
+			background-color: var(--primary-color);
+			color: var(--white);
+			font-size: 1.2rem;
+			outline: none;
+		}
+
+		.form p {
+			margin: 1rem 0;
+			font-size: .7rem;
+		}
+
+		.flex-col {
+			flex-direction: column;
+		}
+
+		.social-list {
+			margin: 2rem 0;
+			padding: 1rem;
+			border-radius: 1.5rem;
+			width: 100%;
+			box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+			transform: scale(0);
+			transition: .5s ease-in-out;
+			transition-delay: 1.2s;
+		}
+
+		.social-list>div {
+			color: var(--white);
+			margin: 0 .5rem;
+			padding: .7rem;
+			cursor: pointer;
+			border-radius: .5rem;
+			cursor: pointer;
+			transform: scale(0);
+			transition: .5s ease-in-out;
+		}
+
+		.social-list>div:nth-child(1) {
+			transition-delay: 1.4s;
+		}
+
+		.social-list>div:nth-child(2) {
+			transition-delay: 1.6s;
+		}
+
+		.social-list>div:nth-child(3) {
+			transition-delay: 1.8s;
+		}
+
+		.social-list>div:nth-child(4) {
+			transition-delay: 2s;
+		}
+
+		.social-list>div>i {
+			font-size: 1.5rem;
+			transition: .4s ease-in-out;
+		}
+
+		.social-list>div:hover i {
+			transform: scale(1.5);
+		}
+
+		.facebook-bg {
+			background-color: var(--facebook-color);
+		}
+
+		.google-bg {
+			background-color: var(--google-color);
+		}
+
+		.twitter-bg {
+			background-color: var(--twitter-color);
+		}
+
+		.insta-bg {
+			background-color: var(--insta-color);
+		}
+
+		.pointer {
+			cursor: pointer;
+		}
+
+		.container.sign-in .form.sign-in,
+		.container.sign-in .social-list.sign-in,
+		.container.sign-in .social-list.sign-in>div,
+		.container.sign-up .form.sign-up,
+		.container.sign-up .social-list.sign-up,
+		.container.sign-up .social-list.sign-up>div {
+			transform: scale(1);
+		}
+
+		.content-row {
+			position: absolute;
+			top: 0;
+			left: 0;
+			pointer-events: none;
+			z-index: 6;
+			width: 100%;
+		}
+
+		.text {
+			margin: 4rem;
+			color: var(--white);
+		}
+
+		.text h2 {
+			font-size: 3.5rem;
+			font-weight: 800;
+			margin: 2rem 0;
+			transition: 1s ease-in-out;
+		}
+
+		.text p {
+			font-weight: 600;
+			transition: 1s ease-in-out;
+			transition-delay: .2s;
+		}
+
+		.img img {
+			width: 30vw;
+			transition: 1s ease-in-out;
+			transition-delay: .4s;
+		}
+
+		.text.sign-in h2,
+		.text.sign-in p,
+		.img.sign-in img {
+			transform: translateX(-250%);
+		}
+
+		.text.sign-up h2,
+		.text.sign-up p,
+		.img.sign-up img {
+			transform: translateX(250%);
+		}
+
+		.container.sign-in .text.sign-in h2,
+		.container.sign-in .text.sign-in p,
+		.container.sign-in .img.sign-in img,
+		.container.sign-up .text.sign-up h2,
+		.container.sign-up .text.sign-up p,
+		.container.sign-up .img.sign-up img {
+			transform: translateX(0);
+		}
+
+		/* BACKGROUND */
+
+		.container::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 100vh;
+			width: 300vw;
+			transform: translate(35%, 0);
+			background-image: linear-gradient(-45deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+			transition: 1s ease-in-out;
+			z-index: 6;
+			box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+			border-bottom-right-radius: max(50vw, 50vh);
+			border-top-left-radius: max(50vw, 50vh);
+		}
+
+		.container.sign-in::before {
+			transform: translate(0, 0);
+			right: 50%;
+		}
+
+		.container.sign-up::before {
+			transform: translate(100%, 0);
+			right: 50%;
+		}
+
+		/* RESPONSIVE */
+
+		@media only screen and (max-width: 425px) {
+
+			.container::before,
+			.container.sign-in::before,
+			.container.sign-up::before {
+				height: 100vh;
+				border-bottom-right-radius: 0;
+				border-top-left-radius: 0;
+				z-index: 0;
+				transform: none;
+				right: 0;
+			}
+
+			/* .container.sign-in .col.sign-up {
+        transform: translateY(100%);
+    } */
+
+			.container.sign-in .col.sign-in,
+			.container.sign-up .col.sign-up {
+				transform: translateY(0);
+			}
+
+			.content-row {
+				align-items: flex-start !important;
+			}
+
+			.content-row .col {
+				transform: translateY(0);
+				background-color: unset;
+			}
+
+			.col {
+				width: 100%;
+				position: absolute;
+				padding: 2rem;
+				background-color: var(--white);
+				border-top-left-radius: 2rem;
+				border-top-right-radius: 2rem;
+				transform: translateY(100%);
+				transition: 1s ease-in-out;
+			}
+
+			.row {
+				align-items: flex-end;
+				justify-content: flex-end;
+			}
+
+			.form,
+			.social-list {
+				box-shadow: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			.text {
+				margin: 0;
+			}
+
+			.text p {
+				display: none;
+			}
+
+			.text h2 {
+				margin: .5rem;
+				font-size: 2rem;
+			}
+		}
+		#error {
+        display: none;
+        color: brown;
+    }
+
+
+
+	
+	</style>
+</head>
+
+<body>
+	
+    <nav>
+        <div class="navbar">
+          <i class='bx bx-menu'></i>
+          <a class="navbar-brand" href="#"><img src="./images/logo.png" alt="Logo" height="70px" width="100px" style="margin-left: -120px;"></a>
+          <div class="logo" style="margin-left: -205px;"><a href="#">BELLEVILLE DENTAL</a></div>
+        
+          <div class="nav-links">
+            <div class="sidebar-logo">
+              <span class="logo-name">Belleville Dental</span>
+              <i class='bx bx-x' ></i>
+            </div>
+            <ul class="links">
+              <li><a href="../homepagee/index.html">HOME</a></li>
+              <!-- <li>
+                <a href="#">ABOUT US</a>
+                <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+                <ul class="htmlCss-sub-menu sub-menu">
+                  <li><a href="#">Web Design</a></li>
+                  <li><a href="#">Login Forms</a></li>
+                  <li><a href="#">Card Design</a></li>
+                  <li class="more">
+                    <span><a href="#">More</a>
+                    <i class='bx bxs-chevron-right arrow more-arrow'></i>
+                  </span>
+                    <ul class="more-sub-menu sub-menu">
+                      <li><a href="#">Neumorphism</a></li>
+                      <li><a href="#">Pre-loader</a></li>
+                      <li><a href="#">Glassmorphism</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li> -->
+              <li><a href="../aboutpageee/about.html">ABOUT US</a></li>
+              <li><a href="#">PRODUCT</a></li>
+              <li>
+                <a href="#">EDUCATION</a>
+                <i class='bx bxs-chevron-down js-arrow arrow '></i>
+                <ul class="js-sub-menu sub-menu">
+                  <li><a href="../patienteducation/patient.html">PATIENT EDUCATION</a></li>
+                  <li><a href="../professional education/professional.html">PROFESSIONAL EDUCATION</a></li>
+                  <!-- <li><a href="#">Card Slider</a></li>
+                  <li><a href="#">Complete Website</a></li> -->
+                </ul>
+              </li>
+             
+              <li><a href="../reserch/research.html">RESEARCH</a></li>
+              <li><a href="../contact/contact.html">CONTACT</a></li>
+              <li><a href="../signuplogin/signup.html">SIGN IN</a></li>
+    
+            </ul>
+          </div>
+          <!-- <div class="search-box">
+            <i class='bx bx-search'></i>
+            <div class="input-box">
+              <input type="text" placeholder="Search...">
+            </div>
+          </div> -->
+        </div>
+      </nav>
+    
+		<!-- <div class="banner-content">
+			<h1>Bringing Smiles to Life</h1>
+			<p>Your one-stop destination for appointments.</p>
+			<button class="book-appointment-button">Book Appointment</button>
+		</div>
+	  </div> -->
+	
+	<div id="container" class="container-fluid container">
+		<!-- FORM SECTION -->
+		<div class="row">
+			<!-- SIGN UP -->
+			<div class="col align-items-center flex-col sign-up">
+				<div class="form-wrapper align-items-center">
+					<div class="form sign-up">
+						<div class="input-group">
+							<i class='bx bxs-user'></i>
+							<input id="sname" type="text" placeholder="Username">
+						</div>
+						<div class="input-group">
+							<i class='bx bx-mail-send'></i>
+							<input id="semail" type="email" placeholder="Email">
+						</div>
+						<div class="input-group">
+							<i class='bx bxs-lock-alt'></i>
+							<input id="spassword" type="password" placeholder="Password">
+							<br> <br>
+
+							<span id="error" class="">error msg</span>
+						</div>
+						<!-- <div class="input-group">
+							<i class='bx bxs-lock-alt'></i>
+							<input type="password" placeholder="Confirm password">
+						</div> -->
+						<button onclick="signin()">
+							Sign up
+						</button>
+						<p>
+							<span>
+								Already have an account?
+							</span>
+							<b onclick="toggle()" class="pointer">
+								Sign in here
+							</b>
+						</p>
+					</div>
+				</div>
+
+			</div>
+			<!-- END SIGN UP -->
+			<!-- SIGN IN -->
+			<div class="col align-items-center flex-col sign-in">
+				<div class="form-wrapper align-items-center">
+					<div class="form sign-in">
+						<div class="input-group">
+							<i class='bx bxs-user'></i>
+							<input id="email" type="email" placeholder="Email">
+						</div>
+						<div class="input-group">
+							<i class='bx bxs-lock-alt'></i>
+							<input id="password" type="password" placeholder="Password">
+						</div>
+						<button onclick="login()">
+							Sign in
+						</button>
+						<p>
+							<b>
+								Forgot password?
+							</b>
+						</p>
+						<p>
+							<span>
+								Don't have an account?
+							</span>
+							<b onclick="toggle()" class="pointer">
+								Sign up here
+							</b>
+						</p>
+					</div>
+				</div>
+				<div class="form-wrapper">
+
+				</div>
+			</div>
+			<!-- END SIGN IN -->
+		</div>
+		<!-- END FORM SECTION -->
+		<!-- CONTENT SECTION -->
+		<div class="row content-row">
+			<!-- SIGN IN CONTENT -->
+			<div class="col align-items-center flex-col">
+				<div class="text sign-in">
+					<h2>
+						Connect!
+					</h2>
+
+
+				</div>
+				<div class="img sign-in">
+
+				</div>
+			</div>
+			<!-- END SIGN IN CONTENT -->
+			<!-- SIGN UP CONTENT -->
+			<div class="col align-items-center flex-col">
+				<div class="img sign-up">
+
+				</div>
+				<div class="text sign-up">
+					<h2>
+						Join Us!
+					</h2>
+
+
+				</div>
+			</div>
+			<!-- END SIGN UP CONTENT -->
+		</div>
+		<!-- END CONTENT SECTION -->
+	</div>
+
+
+
+
+	<!-- 
+  footer -->
+  <section class="footer">
+	<div class="social">
+	  <a href="#"><i class="fab fa-instagram"></i></a>
+	  <a href="#"><i class="fab fa-snapchat"></i></a>
+	  <a href="#"><i class="fab fa-twitter"></i></a>
+	  <a href="#"><i class="fab fa-facebook-f"></i></a>
+	</div>
+
+	<ul class="list">
+	  <li>
+		<a href="../homepagee/index.html">Home</a>
+	  </li>
+	  <li>
+		<a href="../reserch/research.html">Research</a>
+	  </li>
+	  <li>
+		<a href="../aboutpageee/about.html">About</a>
+	  </li>
+	  <li>
+		<a href="../products/product.html">Products</a>
+	  </li>
+	  <li>
+		<a href="../contact/contact.html">Contact</a>
+	  </li>
+	</ul>
+	
+  </section>
+    
+
+
+
+
+
+
+
+
+
+	<script>
+		let container = document.getElementById('container')
+
+		toggle = () => {
+			container.classList.toggle('sign-in')
+			container.classList.toggle('sign-up')
+		}
+
+		setTimeout(() => {
+			container.classList.add('sign-in')
+		}, 200)
+
+
+
+
+
+		function signin() {
+			var name = document.getElementById("sname").value
+
+			var email = document.getElementById("semail").value
+			var password = document.getElementById("spassword").value
+			if (name == "" || email == "" || password == "") {
+				var span = document.getElementById("error")
+
+
+				// span.innerText = "YOU HAVE TO FILLED ALL FIELDS"
+				// span.style.display = "inline"
+				// alert('please fill all field')
+				Swal.fire({
+					position: 'center',
+					icon: 'warning',
+					title: 'please fill all fields',
+					showConfirmButton: false,
+					timer: 2000
+				})
+			} else {
+				localStorage.setItem("name", name)
+				localStorage.setItem("email", email)
+				localStorage.setItem("password", password)
+				// alert("account han been created")
+				Swal.fire({
+					position: 'center',
+					icon: 'success',
+					title: 'account han been created',
+					showConfirmButton: false,
+					timer: 2000
+				})
+				// location.href = "./animatedlogin.html"
+			}
+		}
+
+		function removetext() {
+			var span = document.getElementById("error")
+			span.style.display = "none"
+
+		}
+
+
+		function login() {
+			var email = document.getElementById("email").value
+			var password = document.getElementById("password").value
+			console.log(email)
+			var user_email = localStorage.getItem("email")
+			var user_password = localStorage.getItem("password")
+			console.log(user_email)
+			if (user_email == email && user_password == password) {
+				// alert("wellcome")
+                sessionStorage.setItem("user", "true");
+				location.href = "../products/product.html"
+			} else if (email === "" || password === "") {
+				// alert("please fill all fields")
+				Swal.fire({
+					position: 'center',
+					icon: 'warning',
+					title: 'please fill all fields',
+					showConfirmButton: false,
+					timer: 2000
+				})
+
+			} else {
+				// alert("incorrect email or password")
+				Swal.fire({
+					position: 'center',
+					icon: 'error',
+					title: 'incorrect email or password.',
+					showConfirmButton: false,
+					timer: 2000
+				})
+			}
+
+		}
+	</script>
+	<!-------------------------------------- bootstraplink ------------------------------->
+	<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script> -->
+	<!-------------------------------------- bootstraplink ------------------------------->
+
+</body>
+
+</html>

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./toothh.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <title>FAQ</title>
+    <style>
+        body {
+  background-color: #f5f6f7;
+}
+.faq .faq-list {
+  padding: 0 100px;
+}
+
+.faq .faq-list ul {
+  padding: 0;
+  list-style: none;
+}
+
+.faq .faq-list li+li {
+  margin-top: 15px;
+}
+
+.faq .faq-list li {
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+  position: relative;
+}
+
+.faq .faq-list a {
+  display: block;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  padding: 0 30px;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.faq .faq-list .icon-help {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  left: 20px;
+  color: #12cad6;
+}
+
+.faq .faq-list .icon-show,
+.faq .faq-list .icon-close {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.faq .faq-list p {
+  margin-bottom: 0;
+  padding: 10px 0 0 0;
+}
+
+.faq .faq-list .icon-show {
+  display: none;
+}
+
+.faq .faq-list a.collapsed {
+  color: #36348d;
+  transition: 0.3s;
+}
+
+.faq .faq-list a.collapsed:hover {
+  color: #12cad6;
+}
+
+.faq .faq-list a.collapsed .icon-show {
+  display: inline-block;
+}
+
+.faq .faq-list a.collapsed .icon-close {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .faq .faq-list {
+    padding: 0;
+  }
+}
+
+  /* navbar */
+/* Googlefont Poppins CDN Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  min-height: 100vh;
+}
+nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  height: 70px;
+  background: #12cad6;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  z-index: 99;
+}
+nav .navbar{
+  height: 100%;
+  max-width: 1250px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  /* background: red; */
+  padding: 0 50px;
+}
+.navbar .logo a{
+  font-size: 30px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+nav .navbar .nav-links{
+  line-height: 70px;
+  height: 100%;
+}
+nav .navbar .links{
+  display: flex;
+}
+nav .navbar .links li{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0 14px;
+}
+nav .navbar .links li a{
+  height: 100%;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+}
+.links li:hover .htmlcss-arrow,
+.links li:hover .js-arrow{
+  transform: rotate(180deg);
+  }
+
+nav .navbar .links li .arrow{
+  /* background: red; */
+  height: 100%;
+  width: 22px;
+  line-height: 70px;
+  text-align: center;
+  display: inline-block;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+nav .navbar .links li .sub-menu{
+  position: absolute;
+  top: 70px;
+  left: 0;
+  line-height: 40px;
+  background: #12cad6;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 4px 4px;
+  display: none;
+  z-index: 2;
+}
+nav .navbar .links li:hover .htmlCss-sub-menu,
+nav .navbar .links li:hover .js-sub-menu{
+  display: block;
+}
+.navbar .links li .sub-menu li{
+  padding: 0 22px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.navbar .links li .sub-menu a{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+}
+.navbar .links li .sub-menu .more-arrow{
+  line-height: 40px;
+}
+.navbar .links li .htmlCss-more-sub-menu{
+  line-height: 40px;
+}
+.navbar .links li .sub-menu .more-sub-menu{
+  position: absolute;
+  top: 0;
+  left: 100%;
+  border-radius: 0 4px 4px 4px;
+  z-index: 1;
+  display: none;
+}
+.links li .sub-menu .more:hover .more-sub-menu{
+  display: block;
+}
+
+.navbar .nav-links .sidebar-logo{
+  display: none;
+}
+.navbar .bx-menu{
+  display: none;
+}
+@media (max-width:920px) {
+  nav .navbar{
+    max-width: 100%;
+    padding: 0 25px;
+  }
+
+  nav .navbar .logo a{
+    font-size: 27px;
+  }
+  nav .navbar .links li{
+    padding: 0 10px;
+    white-space: nowrap;
+  }
+  nav .navbar .links li a{
+    font-size: 15px;
+  }
+}
+@media (max-width:800px){
+  nav{
+    position: relative;
+  }
+  .navbar .bx-menu{
+    display: block;
+  }
+  nav .navbar .nav-links{
+    position: fixed;
+    top: 0;
+    left: -100%;
+    display: block;
+    max-width: 270px;
+    width: 100%;
+    background:  #12cad6;
+    line-height: 40px;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+    z-index: 1000;
+  }
+  .navbar .nav-links .sidebar-logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .sidebar-logo .logo-name{
+    font-size: 25px;
+    color: #fff;
+  }
+    .sidebar-logo  i,
+    .navbar .bx-menu{
+      font-size: 25px;
+      color: #fff;
+    }
+  nav .navbar .links{
+    display: block;
+    margin-top: 20px;
+  }
+  nav .navbar .links li .arrow{
+    line-height: 40px;
+  }
+nav .navbar .links li{
+    display: block;
+  }
+nav .navbar .links li .sub-menu{
+  position: relative;
+  top: 0;
+  box-shadow: none;
+  display: none;
+}
+nav .navbar .links li .sub-menu li{
+  border-bottom: none;
+
+}
+.navbar .links li .sub-menu .more-sub-menu{
+  display: none;
+  position: relative;
+  left: 0;
+}
+.navbar .links li .sub-menu .more-sub-menu li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.links li:hover .htmlcss-arrow,
+.links li:hover .js-arrow{
+  transform: rotate(0deg);
+  }
+  .navbar .links li .sub-menu .more-sub-menu{
+    display: none;
+  }
+  .navbar .links li .sub-menu .more span{
+    /* background: red; */
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+  }
+
+  .links li .sub-menu .more:hover .more-sub-menu{
+    display: none;
+  }
+  nav .navbar .links li:hover .htmlCss-sub-menu,
+  nav .navbar .links li:hover .js-sub-menu{
+    display: none;
+  }
+.navbar .nav-links.show1 .links .htmlCss-sub-menu,
+  .navbar .nav-links.show3 .links .js-sub-menu,
+  .navbar .nav-links.show2 .links .more .more-sub-menu{
+      display: block;
+    }
+    .navbar .nav-links.show1 .links .htmlcss-arrow,
+    .navbar .nav-links.show3 .links .js-arrow{
+        transform: rotate(180deg);
+}
+    .navbar .nav-links.show2 .links .more-arrow{
+      transform: rotate(90deg);
+    }
+}
+@media (max-width:370px){
+  nav .navbar .nav-links{
+  max-width: 100%;
+} 
+}
+
+
+
+  
+    </style>
+</head>
+<body>
+
+  <nav>
+    <div class="navbar">
+      <i class='bx bx-menu'></i>
+      <a class="navbar-brand" href="#"><img src="./images/logo.png" alt="Logo" height="70px" width="100px" style="margin-left: -120px;"></a>
+      <div class="logo" style="margin-left: -205px;"><a href="#">BELLEVILLE DENTAL</a></div>
+    
+      <div class="nav-links">
+        <div class="sidebar-logo">
+          <span class="logo-name">Belleville Dental</span>
+          <i class='bx bx-x' ></i>
+        </div>
+        <ul class="links">
+          <li><a href="./index.html">HOME</a></li>
+       
+          <li><a href="../aboutpageee/about.html">ABOUT US</a></li>
+          <li><a href="../products/product.html">PRODUCT</a></li>
+          <li>
+            <a href="#">EDUCATION</a>
+            <i class='bx bxs-chevron-down js-arrow arrow '></i>
+            <ul class="js-sub-menu sub-menu">
+              <li><a href="../patienteducation/patient.html">PATIENT EDUCATION</a></li>
+              <li><a href="../professional education/professional.html">PROFESSIONAL EDUCATION</a></li>
+          
+            </ul>
+          </li>
+         
+          <li><a href="../reserch/research.html">RESEARCH</a></li>
+          <li><a href="../contact/contact.html">CONTACT</a></li>
+          <li><a href="../signuplogin/signup.html">SIGN IN</a></li>
+  
+        </ul>
+ 
+    </div>
+  </nav>
+
+
+
+<br><br><br><br><br><br>
+
+
+
+
+    <section id="faq" class="faq">
+        <div class="container">
+          <div style="text-align:center;">
+            <h2>Frequently Asked Questions</h2>
+          </div>
+      <br><br>
+          <div class="faq-list">
+            <ul>
+              <li>
+                <i class="fa fa-question-circle icon-help" aria-hidden="true"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">What is the importance of regular dental check-ups and cleanings? <i class="fa fa-sm fa-angle-down icon-show" aria-hidden="true"></i><i class="fa fa-sm fa-angle-up icon-close"></i></a>
+                <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                  <p>
+                    Regular dental check-ups and cleanings are vital for preventing dental issues, detecting problems early, and maintaining overall oral health.
+                  </p>
+                </div>
+              </li>
+      
+              <li>
+                <i class="fa fa-question-circle icon-help" aria-hidden="true"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">How often should I visit the dentist for routine check-ups? <i class="fa fa-sm fa-angle-down icon-show" aria-hidden="true"></i><i class="fa fa-sm fa-angle-up icon-close"></i></a>
+                <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                  <p>
+                    It's generally recommended to visit your dentist every six months for routine check-ups and cleanings, but your dentist may suggest a different schedule based on your specific needs.
+                  </p>
+                </div>
+              </li>
+      
+              <li>
+                <i class="fa fa-question-circle icon-help" aria-hidden="true"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">What are the common signs and symptoms of dental problems that I should watch out for? <i class="fa fa-sm fa-angle-down icon-show" aria-hidden="true"></i><i class="fa fa-sm fa-angle-up icon-close"></i></a>
+                <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                  <p>
+                    Common signs include toothache, bleeding gums, bad breath, tooth sensitivity, and visible cavities. Regular dental visits help catch these issues before they worsen.
+                  </p>
+                </div>
+              </li>
+      
+              <li>
+                <i class="fa fa-question-circle icon-help" aria-hidden="true"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">What is the difference between a dentist and an orthodontist? <i class="fa fa-sm fa-angle-down icon-show" aria-hidden="true"></i><i class="fa fa-sm fa-angle-up icon-close"></i></a>
+                <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                  <p>
+                    Dentists focus on overall oral health, while orthodontists specialize in diagnosing and correcting bite and teeth alignment issues.
+                  </p>
+                </div>
+              </li>
+      
+              <li>
+                <i class="fa fa-question-circle icon-help" aria-hidden="true"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">Can you explain the different types of dental procedures for improving my smile? <i class="fa fa-sm fa-angle-down icon-show" aria-hidden="true"></i><i class="fa fa-sm fa-angle-up icon-close"></i></a>
+                <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                  <p>
+                    Procedures like teeth whitening, veneers, braces, and dental crowns can enhance your smile. Your dentist can recommend the most suitable option for you.
+                  </p>
+                </div>
+              </li>
+      
+              <li>
+                <i class="fa fa-question-circle icon-help" aria-hidden="true"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-6" class="collapsed">How can I alleviate dental anxiety or fear of dental visits? <i class="fa fa-sm fa-angle-down icon-show" aria-hidden="true"></i><i class="fa fa-sm fa-angle-up icon-close"></i></a>
+                <div id="faq-list-6" class="collapse" data-bs-parent=".faq-list">
+                  <p>
+                    Dentists offer various strategies to help patients manage anxiety, such as sedation options, relaxation techniques, and open communication about fears and concerns.
+                  </p>
+                </div>
+              </li>
+      
+              <li>
+                <i class="fa fa-question-circle icon-help" aria-hidden="true"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-7" class="collapsed">What are the options for replacing missing teeth?<i class="fa fa-sm fa-angle-down icon-show" aria-hidden="true"></i><i class="fa fa-sm fa-angle-up icon-close"></i></a>
+                <div id="faq-list-7" class="collapse" data-bs-parent=".faq-list">
+                  <p>
+                    Options include dental implants, bridges, and dentures. Your dentist will assess your situation to recommend the most appropriate solution.
+                  </p>
+                </div>
+              </li>
+      
+              <li>
+                <i class="fa fa-question-circle icon-help" aria-hidden="true"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-8" class="collapsed">What is the process for getting dental implants?
+                    <i class="fa fa-sm fa-angle-down icon-show" aria-hidden="true"></i><i class="fa fa-sm fa-angle-up icon-close"></i></a>
+                <div id="faq-list-8" class="collapse" data-bs-parent=".faq-list">
+                  <p>
+                    Dental implants involve placing a titanium post in the jawbone, followed by attaching a prosthetic tooth. The process typically spans several months.
+                  </p>
+                </div>
+              </li>
+      
+              <li>
+                <i class="fa fa-question-circle icon-help" aria-hidden="true"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-9" class="collapsed"> How do I take care of my oral health at home between dental appointments?<i class="fa fa-sm fa-angle-down icon-show" aria-hidden="true"></i><i class="fa fa-sm fa-angle-up icon-close"></i></a>
+                <div id="faq-list-9" class="collapse" data-bs-parent=".faq-list">
+                  <p>
+                    Brushing at least twice a day, flossing daily, using mouthwash, and maintaining a balanced diet can contribute to good oral hygiene between dental visits.
+                  </p>
+                </div>
+              </li>
+      
+              <li>
+                <i class="fa fa-question-circle icon-help" aria-hidden="true"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-10" class="collapsed"> What insurance plans do you accept, and what financing options are available for dental treatments?<i class="fa fa-sm fa-angle-down icon-show" aria-hidden="true"></i><i class="fa fa-sm fa-angle-up icon-close"></i></a>
+                <div id="faq-list-10" class="collapse" data-bs-parent=".faq-list">
+                  <p>
+                    Dental offices often accept a range of insurance plans. They may also offer financing options, such as payment plans or CareCredit, to make dental treatments more affordable for patients.
+                  </p>
+                </div>
+              </li>
+      
+              <li>
+                <i class="fa fa-question-circle icon-help" aria-hidden="true"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-11" class="collapsed">What are the different options for financing dental treatments? <i class="fa fa-sm fa-angle-down icon-show" aria-hidden="true"></i><i class="fa fa-sm fa-angle-up icon-close"></i></a>
+                <div id="faq-list-11" class="collapse" data-bs-parent=".faq-list">
+                  <p>
+                    Dental treatments can be financed through dental insurance, payment plans, health savings accounts (HSAs), or flexible spending accounts (FSAs). Your dentist's office can help you explore these options.
+                  </p>
+                </div>
+              </li>
+      
+            </ul>
+          </div>
+      
+        </div>
+      </section>
+      <br><br>
+
+<!-- 
+  footer -->
+ 
+  <section class="footer">
+    <div class="social">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-snapchat"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+    </div>
+
+    <ul class="list">
+      <li>
+        <a href="../homepagee/index.html">Home</a>
+      </li>
+      <li>
+        <a href="../reserch/research.html">Research</a>
+      </li>
+      <li>
+        <a href="../aboutpageee/about.html">About</a>
+      </li>
+      <li>
+        <a href="../products/product.html">Products</a>
+      </li>
+      <li>
+        <a href="../contact/contact.html">Contact</a>
+      </li>
+    </ul>
+    
+  </section>
+
+
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>
